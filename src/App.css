@@ -1,0 +1,269 @@
+@font-face {
+  font-family: orkut-font;
+  src: url('/public/fonts/HORATIOM.TTF') format('opentype');
+}
+
+:root {
+  --primary-text-color: #ed2590;
+  --secondary-text-color: #4b4b4b;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins';
+  background: #d6dff0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.input-box button {
+  position: absolute;
+  background: transparent;
+  left: 15px;
+  border: none;
+  color: #9fa1a3;
+}
+
+.input-box input {
+  background: #eff3f8;
+  border: none;
+  color: #9fa1a3;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0 15px 0 45px;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  width: 100%;
+  /* height: 70px; */
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu ul li {
+  padding: 0 10px;
+}
+
+.menu ul li a {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.menu ul li.active a {
+  color: var(--primary-text-color);
+}
+
+.logo h1 {
+  font-family: 'orkut-font';
+  font-weight: bold;
+  font-size: 60px;
+  color: var(--primary-text-color);
+}
+
+.user-menu button {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  align-items: center;
+  color: var(--secondary-text-color);
+  font-weight: bold;
+}
+
+.user-menu button img {
+  height: 50px;
+  border-radius: 50px;
+}
+
+.user-menu button span {
+  display: flex;
+  align-items: center;
+}
+
+.user-menu button span i {
+  color: var(--primary-text-color);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu button {
+  background: transparent;
+  border: none;
+  color: var(--primary-text-color);
+}
+
+.mobile-menu button i {
+  font-size: 40px;
+}
+
+@media (max-width: 1200px) {
+  .menu {
+    display: none;
+  }
+
+  .search-menu {
+    display: none;
+  }
+
+  .user-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .home-grid-column {
+    width: 100% !important;
+  }
+}
+
+/* HOME */
+
+.home {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 0;
+  /* height: 70px; */
+}
+
+.home-grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-grid-column {
+  padding: 15px;
+}
+
+.home-grid-column.col-25 {
+  width: 25%;
+}
+
+.home-grid-column.col-50 {
+  width: 50%;
+}
+
+.profile-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.profile-card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.profile-cart-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--secondary-text-color);
+  margin-bottom: 10px;
+}
+
+.profile-cart-header a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+
+.profile-cart-grid-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-cart-grid-list > * {
+  width: calc(100% / 3);
+  padding: 0 10px;
+}
+
+.profile-cart-grid-item a img {
+  width: 100%;
+}
+
+.profile-cart-grid-item a {
+  text-decoration: none;
+  font-size: 10px;
+  color: var(--secondary-text-color);
+}
+
+.profile-cart-grid-item a label {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.profile-grid-item-image {
+  display: flex;
+  justify-content: center;
+  padding: 7px 0;
+}
+
+#friends-card, #communities-card {
+  padding: 20px 10px;
+}
+
+#friends-card .profile-grid-item-image img {
+  border-radius: 50%;
+}
+
+#communities-card .profile-grid-item-image img {
+  border-radius: 8px;
+}
+
+#friends-card .profile-cart-header {
+  padding: 0 10px;
+} 
+
+#communities-card .profile-cart-header {
+  padding: 0 10px;
+} 
