@@ -29,7 +29,7 @@ export function Header(props: Props) {
                         <a href="#">Comunidades</a>
                     </li>
                     <li>
-                        <a href="#">Aplicativos</a>
+                        <Link to="/login">Aplicativos</Link>
                     </li>
                 </ul>
             </div>

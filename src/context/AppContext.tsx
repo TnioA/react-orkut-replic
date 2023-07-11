@@ -7,19 +7,17 @@ interface Props {
 }
 
 export function AppContextProvider(props: Props) {
-    // const [cartProducts, setCartProducts] = useState<ProductModel[]>([]);
+    const [user, setUser] = useState<Object>();
 
     useState(()=> {
+        const user = new Object();
+        setUser(user);
         // var cartProducts: ProductModel[] = JSON.parse(localStorage.getItem("cartProducts") ?? "[]");
         // setCartProducts(cartProducts);
     });
 
     return <AppContext.Provider value={{
-        // cartProducts,
-        // getTotalInfoCart,
-        // addProduct,
-        // removeProduct,
-        // changeProductCount
+        user
     }}>
         {props.children}
     </AppContext.Provider>;

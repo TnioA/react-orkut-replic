@@ -4,7 +4,7 @@
 }
 
 :root {
-  --primary-text-color: #ed2590;
+  --primary-text-color: #D81D99;
   --secondary-text-color: #4b4b4b;
 }
 
@@ -15,255 +15,163 @@
 }
 
 body {
-  font-family: 'Poppins';
-  background: #d6dff0;
+  font-family: 'Rubik', sans-serif;
+  background: #D9E6F6;
+  color: #333333;
 }
 
-button {
-  cursor: pointer;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-}
-
-.input-box {
-  position: relative;
-  width: 100%;
-  height: 100%;
+section {
   display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.login {
+  height: 100vh;
+  padding: 10px;
   align-items: center;
-  /* justify-content: center; */
 }
 
-.input-box button {
-  position: absolute;
-  background: transparent;
-  left: 15px;
-  border: none;
-  color: #9fa1a3;
+.login .container {
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
 }
 
-.input-box input {
-  background: #eff3f8;
-  border: none;
-  color: #9fa1a3;
-  height: 40px;
+.login-content {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 20px;
+}
+
+.login-logo {
+  background: #fff;
+  width: 70%;
+  min-height: 400px;
   border-radius: 8px;
-  padding: 0 15px 0 45px;
-}
-
-/* HEADER */
-
-.header {
   display: flex;
   justify-content: center;
-  background: #fff;
-  width: 100%;
-  /* height: 70px; */
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 15px;
-}
-
-.menu {
-  display: flex;
   align-items: center;
+  padding: 10px;
 }
 
-.menu ul {
-  display: flex;
-  list-style: none;
-}
-
-.menu ul li {
-  padding: 0 10px;
-}
-
-.menu ul li a {
-  color: var(--secondary-text-color);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.menu ul li.active a {
-  color: var(--primary-text-color);
-}
-
-.logo h1 {
-  font-family: 'orkut-font';
-  font-weight: bold;
-  font-size: 60px;
-  color: var(--primary-text-color);
-}
-
-.user-menu button {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  align-items: center;
-  color: var(--secondary-text-color);
-  font-weight: bold;
-}
-
-.user-menu button img {
-  height: 50px;
-  border-radius: 50px;
-}
-
-.user-menu button span {
-  display: flex;
-  align-items: center;
-}
-
-.user-menu button span i {
-  color: var(--primary-text-color);
-}
-
-.mobile-menu {
-  display: none;
-}
-
-.mobile-menu button {
-  background: transparent;
-  border: none;
-  color: var(--primary-text-color);
-}
-
-.mobile-menu button i {
-  font-size: 40px;
-}
-
-@media (max-width: 1200px) {
-  .menu {
-    display: none;
-  }
-
-  .search-menu {
-    display: none;
-  }
-
-  .user-menu {
-    display: none;
-  }
-
-  .mobile-menu {
-    display: flex;
-  }
-
-  .home-grid-column {
-    width: 100% !important;
-  }
-}
-
-/* HOME */
-
-.home {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 15px 0;
-  /* height: 70px; */
-}
-
-.home-grid-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.home-grid-column {
-  padding: 15px;
-}
-
-.home-grid-column.col-25 {
-  width: 25%;
-}
-
-.home-grid-column.col-50 {
-  width: 50%;
-}
-
-.profile-card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.profile-card {
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  width: 100%;
-}
-
-.profile-cart-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--secondary-text-color);
-  margin-bottom: 10px;
-}
-
-.profile-cart-header a {
-  text-decoration: none;
-  color: var(--primary-text-color);
-}
-
-.profile-cart-grid-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.profile-cart-grid-list > * {
-  width: calc(100% / 3);
-  padding: 0 10px;
-}
-
-.profile-cart-grid-item a img {
-  width: 100%;
-}
-
-.profile-cart-grid-item a {
-  text-decoration: none;
-  font-size: 10px;
-  color: var(--secondary-text-color);
-}
-
-.profile-cart-grid-item a label {
-  display: flex;
+.login-logo-content {
   text-align: center;
-  justify-content: center;
 }
 
-.profile-grid-item-image {
+.login-logo-content h1 {
+  font-weight: 700;
+  font-size: 90px;
+  padding: 20px 0;
+  font-family: 'orkut-font';
+  color: var(--primary-text-color);
+}
+
+.login-logo-content p {
+  font-size: 12px;
+  line-height: 14px;
+  padding: 2px;
+}
+
+.login-logo-content p strong {
+  color: var(--primary-text-color);
+}
+
+.login-form {
+  background: #F1F9FE;
+  width: 400px;
+  min-height: 400px;
+  border-radius: 8px;
+  padding: 10px;
   display: flex;
   justify-content: center;
-  padding: 7px 0;
 }
 
-#friends-card, #communities-card {
-  padding: 20px 10px;
+.login-form svg {
+  margin-bottom: 20px;
 }
 
-#friends-card .profile-grid-item-image img {
-  border-radius: 50%;
+.login-form form {
+  display: block;
 }
 
-#communities-card .profile-grid-item-image img {
+.login-form-logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 15px;
+}
+
+.login-form .login-form-content p {
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 230px;
+  /* display: flex; */
+}
+
+.login-form form input {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 33px;
+  background: #FFFFFF;
+  border: 1px solid #C5C6CA;
   border-radius: 8px;
+  font-size: 12px;
+  color: #999999;
+  padding: 0 20px;
 }
 
-#friends-card .profile-cart-header {
-  padding: 0 10px;
-} 
+.login-form form button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
 
-#communities-card .profile-cart-header {
-  padding: 0 10px;
-} 
+  background: #2E7BB4;
+  border: 1px solid #2E7BB4;
+  border-radius: 8px;
+  height: 33px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #FFFFFF;
+}
+
+.login-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 100%;
+  height: 27px;
+  background: #BBCDE8;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #2E7BB4;
+  padding: 20px;
+}
+
+@media (max-width: 1100px) {
+  .login {
+    height: auto;
+  }
+
+  .login-content {
+    display: block;
+  }
+
+  .login-content>* {
+    width: 100%;
+  }
+
+  .login-logo {
+    margin-bottom: 10px;
+  }
+}
