@@ -1,13 +1,32 @@
-import { useContext, useState } from "react"
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom";
 
 import { ReactComponent as LoginIcon } from '../assets/login.svg';
+import { AppContext } from "../context/AppContext";
+import Api from "../Api";
 
 interface Props {
 
 }
 
 export function Login(props: Props) {
+    const navigate = useNavigate();
+    const context: any = useContext(AppContext);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    async function handleLogin() {
+        const response = await Api.Login(email, password);
+        if(!response.success) {
+            alert(response.errors[0].message);
+            return;
+        }
+
+
+        context.authenticate(response.data.token);
+        navigate("/");
+    }
+
     return <section className="login">
         <div className="container">
             <div className="login-content">
@@ -26,14 +45,14 @@ export function Login(props: Props) {
                         </div>
                         <p>Acesse o <strong>horkut</strong> com seu e-mail e senha</p>
                         <form>
-                            <input type="email" placeholder="Digite seu e-mail" />
-                            <button type="button">Login</button>
+                            <input type="email" placeholder="Digite seu e-mail" value={email} onChange={e => setEmail(e.target.value)} />
+                            <button type="button" onClick={()=> handleLogin()}>Login</button>
                         </form>
                     </div>
                 </div>
             </div>
             <div className="login-footer">
-            © 2022 Hubkut - Sobre o Hubkut - Centro de segurança - Privacidade - Termos - Contato
+                © 2022 Hubkut - Sobre o Hubkut - Centro de segurança - Privacidade - Termos - Contato
             </div>
         </div>
 

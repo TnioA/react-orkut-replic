@@ -1,5 +1,10 @@
 export interface BaseResultModel {
     success: boolean;
     data: any;
-    errors: any;
+    errors: Error[];
+}
+
+export interface Error {
+    code: string;
+    message: string;
 }

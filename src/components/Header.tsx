@@ -1,22 +1,34 @@
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
+import { ReactComponent as MenuIcon } from '../assets/menu.svg';
+import { ReactComponent as CloseIcon } from '../assets/close.svg';
 
 interface Props {
     history: any;
 }
 
 export function Header(props: Props) {
-    return <header className="header">
+    const context: any = useContext(AppContext);
+    const [showMenu, setShowMenu] = useState(false);
+
+    function logout() {
+        context.logout();
+    }
+
+    return <><header className="header">
         <div className="container">
-            <div className="logo">
-                <h1>horkut</h1>
-            </div>
             <div className="menu">
+                <div className="logo">
+                    <Link to="/">
+                        <h1>Horkut</h1>
+                    </Link>
+                </div>
                 <ul>
-                    <li>
+                    <li className="active">
                         <a href="#">Início</a>
                     </li>
-                    <li className="active">
+                    <li>
                         <a href="#">Perfil</a>
                     </li>
                     <li>
@@ -29,11 +41,14 @@ export function Header(props: Props) {
                         <a href="#">Comunidades</a>
                     </li>
                     <li>
-                        <Link to="/login">Aplicativos</Link>
+                        <Link to="#">Aplicativos</Link>
                     </li>
                 </ul>
             </div>
             <div className="search-menu">
+                <div className="logout-menu">
+                    <button onClick={() => logout()}>Sair</button>
+                </div>
                 <div className="input-box">
                     <button className="input-button" type="button">
                         <span className="material-icons">search</span>
@@ -41,24 +56,21 @@ export function Header(props: Props) {
                     <input type="text" placeholder="Pesquisar no Horkut" />
                 </div>
             </div>
-            <div className="user-menu">
-                <button>
-                    <img src="./images/profile.jpg" alt="profile-image" />
-                    <span>
-                        Juremildo Santos
-                        <i className="material-icons">
-                            expand_more
-                        </i>
-                    </span>
-                </button>
-            </div>
             <div className="mobile-menu">
-                <button type="button">
-                    <i className="material-icons">
-                        menu
-                    </i>
-                </button>
+                {!showMenu ?
+                    <button className="show-menu-button" type="button" onClick={() => setShowMenu(true)}>
+                        <MenuIcon />
+                    </button>
+                    :
+                    <button className="close-menu-button" type="button" onClick={() => setShowMenu(false)}>
+                        <CloseIcon />
+                    </button>
+                }
             </div>
         </div>
     </header>
+        <div className={`menu-container ${showMenu ? "active" : ""}`}>
+            ...
+        </div>
+    </>
 }
